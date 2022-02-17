@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">303722186381-91dj7gkusjg8bv3du3dnb1h8ed4u3i6u.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">303722186381</string>
+    <string name="google_api_key" translatable="false">AIzaSyBs52rpLMeuk1sMrlYQJDkVMwBj71NqSsQ</string>
+    <string name="google_app_id" translatable="false">1:303722186381:android:7f6dc5874a884505aa44c4</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBs52rpLMeuk1sMrlYQJDkVMwBj71NqSsQ</string>
+    <string name="google_storage_bucket" translatable="false">nutricionh-6d1e7.appspot.com</string>
+    <string name="project_id" translatable="false">nutricionh-6d1e7</string>
+</resources>

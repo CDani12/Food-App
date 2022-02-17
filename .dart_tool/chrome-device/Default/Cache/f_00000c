@@ -1,0 +1,262 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/food_app/models/delivery_address_model.dart', 'packages/fluttertoast/fluttertoast.dart', 'packages/cloud_firestore/cloud_firestore.dart', 'packages/firebase_auth/firebase_auth.dart', 'packages/food_app/models/review_cart_model.dart', 'packages/flutter/src/foundation/change_notifier.dart', 'packages/location_platform_interface/location_platform_interface.dart'], (function load__packages__food_app__providers__check_out_provider_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__food_app__models__delivery_address_model$46dart, packages__fluttertoast__fluttertoast$46dart, packages__cloud_firestore__cloud_firestore$46dart, packages__firebase_auth__firebase_auth$46dart, packages__food_app__models__review_cart_model$46dart, packages__flutter__src__foundation__change_notifier$46dart, packages__location_platform_interface__location_platform_interface$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const editable_text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__editable_text;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const delivery_address_model = packages__food_app__models__delivery_address_model$46dart.models__delivery_address_model;
+  const fluttertoast = packages__fluttertoast__fluttertoast$46dart.fluttertoast;
+  const cloud_firestore = packages__cloud_firestore__cloud_firestore$46dart.cloud_firestore;
+  const firebase_auth = packages__firebase_auth__firebase_auth$46dart.firebase_auth;
+  const review_cart_model = packages__food_app__models__review_cart_model$46dart.models__review_cart_model;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  const location_platform_interface = packages__location_platform_interface__location_platform_interface$46dart.location_platform_interface;
+  var check_out_provider = Object.create(dart.library);
+  var $isEmpty = dartx.isEmpty;
+  var $toString = dartx.toString;
+  var $add = dartx.add;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    DeliveryAddressModelL: () => (T.DeliveryAddressModelL = dart.constFn(dart.legacy(delivery_address_model.DeliveryAddressModel)))(),
+    JSArrayOfDeliveryAddressModelL: () => (T.JSArrayOfDeliveryAddressModelL = dart.constFn(_interceptors.JSArray$(T.DeliveryAddressModelL())))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    IdentityMapOfStringL$dynamic: () => (T.IdentityMapOfStringL$dynamic = dart.constFn(_js_helper.IdentityMap$(T.StringL(), dart.dynamic)))(),
+    ObjectL: () => (T.ObjectL = dart.constFn(dart.legacy(core.Object)))(),
+    FutureOfNull: () => (T.FutureOfNull = dart.constFn(async.Future$(core.Null)))(),
+    FutureLOfNull: () => (T.FutureLOfNull = dart.constFn(dart.legacy(T.FutureOfNull())))(),
+    voidToFutureLOfNull: () => (T.voidToFutureLOfNull = dart.constFn(dart.fnType(T.FutureLOfNull(), [dart.void])))(),
+    MapOfStringL$dynamic: () => (T.MapOfStringL$dynamic = dart.constFn(core.Map$(T.StringL(), dart.dynamic)))(),
+    MapLOfStringL$dynamic: () => (T.MapLOfStringL$dynamic = dart.constFn(dart.legacy(T.MapOfStringL$dynamic())))(),
+    ReviewCartModelL: () => (T.ReviewCartModelL = dart.constFn(dart.legacy(review_cart_model.ReviewCartModel)))(),
+    ReviewCartModelLToMapLOfStringL$dynamic: () => (T.ReviewCartModelLToMapLOfStringL$dynamic = dart.constFn(dart.fnType(T.MapLOfStringL$dynamic(), [T.ReviewCartModelL()])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var I = ["package:food_app/providers/check_out_provider.dart"];
+  var isloadding = dart.privateName(check_out_provider, "CheckoutProvider.isloadding");
+  var firstName = dart.privateName(check_out_provider, "CheckoutProvider.firstName");
+  var lastName = dart.privateName(check_out_provider, "CheckoutProvider.lastName");
+  var mobileNo = dart.privateName(check_out_provider, "CheckoutProvider.mobileNo");
+  var alternateMobileNo = dart.privateName(check_out_provider, "CheckoutProvider.alternateMobileNo");
+  var scoiety = dart.privateName(check_out_provider, "CheckoutProvider.scoiety");
+  var street = dart.privateName(check_out_provider, "CheckoutProvider.street");
+  var landmark = dart.privateName(check_out_provider, "CheckoutProvider.landmark");
+  var city = dart.privateName(check_out_provider, "CheckoutProvider.city");
+  var aera = dart.privateName(check_out_provider, "CheckoutProvider.aera");
+  var pincode = dart.privateName(check_out_provider, "CheckoutProvider.pincode");
+  var setLoaction = dart.privateName(check_out_provider, "CheckoutProvider.setLoaction");
+  var deliveryAdressList = dart.privateName(check_out_provider, "CheckoutProvider.deliveryAdressList");
+  const Object_ChangeNotifier$36 = class Object_ChangeNotifier extends core.Object {};
+  (Object_ChangeNotifier$36.new = function() {
+    change_notifier.ChangeNotifier.new.call(this);
+  }).prototype = Object_ChangeNotifier$36.prototype;
+  dart.applyMixin(Object_ChangeNotifier$36, change_notifier.ChangeNotifier);
+  check_out_provider.CheckoutProvider = class CheckoutProvider extends Object_ChangeNotifier$36 {
+    get isloadding() {
+      return this[isloadding];
+    }
+    set isloadding(value) {
+      this[isloadding] = value;
+    }
+    get firstName() {
+      return this[firstName];
+    }
+    set firstName(value) {
+      this[firstName] = value;
+    }
+    get lastName() {
+      return this[lastName];
+    }
+    set lastName(value) {
+      this[lastName] = value;
+    }
+    get mobileNo() {
+      return this[mobileNo];
+    }
+    set mobileNo(value) {
+      this[mobileNo] = value;
+    }
+    get alternateMobileNo() {
+      return this[alternateMobileNo];
+    }
+    set alternateMobileNo(value) {
+      this[alternateMobileNo] = value;
+    }
+    get scoiety() {
+      return this[scoiety];
+    }
+    set scoiety(value) {
+      this[scoiety] = value;
+    }
+    get street() {
+      return this[street];
+    }
+    set street(value) {
+      this[street] = value;
+    }
+    get landmark() {
+      return this[landmark];
+    }
+    set landmark(value) {
+      this[landmark] = value;
+    }
+    get city() {
+      return this[city];
+    }
+    set city(value) {
+      this[city] = value;
+    }
+    get aera() {
+      return this[aera];
+    }
+    set aera(value) {
+      this[aera] = value;
+    }
+    get pincode() {
+      return this[pincode];
+    }
+    set pincode(value) {
+      this[pincode] = value;
+    }
+    get setLoaction() {
+      return this[setLoaction];
+    }
+    set setLoaction(value) {
+      this[setLoaction] = value;
+    }
+    get deliveryAdressList() {
+      return this[deliveryAdressList];
+    }
+    set deliveryAdressList(value) {
+      this[deliveryAdressList] = value;
+    }
+    validator(context, myType) {
+      return async.async(dart.void, (function* validator() {
+        if (this.firstName.text[$isEmpty]) {
+          fluttertoast.Fluttertoast.showToast({msg: "firstname is empty"});
+        } else if (this.lastName.text[$isEmpty]) {
+          fluttertoast.Fluttertoast.showToast({msg: "lastname is empty"});
+        } else if (this.mobileNo.text[$isEmpty]) {
+          fluttertoast.Fluttertoast.showToast({msg: "mobileNo is empty"});
+        } else if (this.alternateMobileNo.text[$isEmpty]) {
+          fluttertoast.Fluttertoast.showToast({msg: "alternateMobileNo is empty"});
+        } else if (this.scoiety.text[$isEmpty]) {
+          fluttertoast.Fluttertoast.showToast({msg: "scoiety is empty"});
+        } else if (this.street.text[$isEmpty]) {
+          fluttertoast.Fluttertoast.showToast({msg: "street is empty"});
+        } else if (this.landmark.text[$isEmpty]) {
+          fluttertoast.Fluttertoast.showToast({msg: "landmark is empty"});
+        } else if (this.city.text[$isEmpty]) {
+          fluttertoast.Fluttertoast.showToast({msg: "city is empty"});
+        } else if (this.aera.text[$isEmpty]) {
+          fluttertoast.Fluttertoast.showToast({msg: "aera is empty"});
+        } else if (this.pincode.text[$isEmpty]) {
+          fluttertoast.Fluttertoast.showToast({msg: "pincode is empty"});
+        } else if (this.setLoaction == null) {
+          fluttertoast.Fluttertoast.showToast({msg: "setLoaction is empty"});
+        } else {
+          this.isloadding = true;
+          this.notifyListeners();
+          yield cloud_firestore.FirebaseFirestore.instance.collection("AddDeliverAddress").doc(firebase_auth.FirebaseAuth.instance.currentUser.uid).set(new (T.IdentityMapOfStringL$dynamic()).from(["firstname", this.firstName.text, "lastname", this.lastName.text, "mobileNo", this.mobileNo.text, "alternateMobileNo", this.alternateMobileNo.text, "scoiety", this.scoiety.text, "street", this.street.text, "landmark", this.landmark.text, "city", this.city.text, "aera", this.aera.text, "pincode", this.pincode.text, "addressType", dart.toString(myType), "longitude", this.setLoaction.longitude, "latitude", this.setLoaction.latitude])).then(core.Null, dart.fn(value => async.async(core.Null, (function*() {
+            this.isloadding = false;
+            this.notifyListeners();
+            yield fluttertoast.Fluttertoast.showToast({msg: "Add your deliver address"});
+            navigator.Navigator.of(framework.BuildContext.as(context)).pop(T.ObjectL());
+            this.notifyListeners();
+          }).bind(this)), T.voidToFutureLOfNull()));
+          this.notifyListeners();
+        }
+      }).bind(this));
+    }
+    getDeliveryAddressData() {
+      return async.async(dart.dynamic, (function* getDeliveryAddressData() {
+        let newList = T.JSArrayOfDeliveryAddressModelL().of([]);
+        let deliveryAddressModel = null;
+        let _db = (yield cloud_firestore.FirebaseFirestore.instance.collection("AddDeliverAddress").doc(firebase_auth.FirebaseAuth.instance.currentUser.uid).get());
+        if (dart.test(_db.exists)) {
+          deliveryAddressModel = new delivery_address_model.DeliveryAddressModel.new({firstName: T.StringL().as(_db.get("firstname")), lastName: T.StringL().as(_db.get("lastname")), addressType: T.StringL().as(_db.get("addressType")), aera: T.StringL().as(_db.get("aera")), alternateMobileNo: T.StringL().as(_db.get("alternateMobileNo")), city: T.StringL().as(_db.get("city")), landMark: T.StringL().as(_db.get("landmark")), mobileNo: T.StringL().as(_db.get("mobileNo")), pinCode: T.StringL().as(_db.get("pincode")), scoirty: T.StringL().as(_db.get("scoiety")), street: T.StringL().as(_db.get("street"))});
+          newList[$add](deliveryAddressModel);
+          this.notifyListeners();
+        }
+        this.deliveryAdressList = newList;
+        this.notifyListeners();
+      }).bind(this));
+    }
+    get getDeliveryAddressList() {
+      return this.deliveryAdressList;
+    }
+    addPlaceOderData(opts) {
+      let oderItemList = opts && 'oderItemList' in opts ? opts.oderItemList : null;
+      let subTotal = opts && 'subTotal' in opts ? opts.subTotal : null;
+      let address = opts && 'address' in opts ? opts.address : null;
+      let shipping = opts && 'shipping' in opts ? opts.shipping : null;
+      return async.async(dart.dynamic, function* addPlaceOderData() {
+        cloud_firestore.FirebaseFirestore.instance.collection("Order").doc(firebase_auth.FirebaseAuth.instance.currentUser.uid).collection("MyOrders").doc().set(new (T.IdentityMapOfStringL$dynamic()).from(["subTotal", "1234", "Shipping Charge", "", "Discount", "10", "orderItems", oderItemList[$map](T.MapLOfStringL$dynamic(), dart.fn(e => new (T.IdentityMapOfStringL$dynamic()).from(["orderTime", new core.DateTime.now(), "orderImage", e.cartImage, "orderName", e.cartName, "orderUnit", e.cartUnit, "orderPrice", e.cartPrice, "orderQuantity", e.cartQuantity]), T.ReviewCartModelLToMapLOfStringL$dynamic()))[$toList]()]));
+      });
+    }
+  };
+  (check_out_provider.CheckoutProvider.new = function() {
+    this[isloadding] = false;
+    this[firstName] = new editable_text.TextEditingController.new();
+    this[lastName] = new editable_text.TextEditingController.new();
+    this[mobileNo] = new editable_text.TextEditingController.new();
+    this[alternateMobileNo] = new editable_text.TextEditingController.new();
+    this[scoiety] = new editable_text.TextEditingController.new();
+    this[street] = new editable_text.TextEditingController.new();
+    this[landmark] = new editable_text.TextEditingController.new();
+    this[city] = new editable_text.TextEditingController.new();
+    this[aera] = new editable_text.TextEditingController.new();
+    this[pincode] = new editable_text.TextEditingController.new();
+    this[setLoaction] = null;
+    this[deliveryAdressList] = T.JSArrayOfDeliveryAddressModelL().of([]);
+    check_out_provider.CheckoutProvider.__proto__.new.call(this);
+    ;
+  }).prototype = check_out_provider.CheckoutProvider.prototype;
+  dart.addTypeTests(check_out_provider.CheckoutProvider);
+  dart.addTypeCaches(check_out_provider.CheckoutProvider);
+  dart.setMethodSignature(check_out_provider.CheckoutProvider, () => ({
+    __proto__: dart.getMethods(check_out_provider.CheckoutProvider.__proto__),
+    validator: dart.fnType(dart.void, [dart.dynamic, dart.dynamic]),
+    getDeliveryAddressData: dart.fnType(dart.dynamic, []),
+    addPlaceOderData: dart.fnType(dart.dynamic, [], {address: dart.dynamic, oderItemList: dart.legacy(core.List$(dart.legacy(review_cart_model.ReviewCartModel))), shipping: dart.dynamic, subTotal: dart.dynamic}, {})
+  }));
+  dart.setGetterSignature(check_out_provider.CheckoutProvider, () => ({
+    __proto__: dart.getGetters(check_out_provider.CheckoutProvider.__proto__),
+    getDeliveryAddressList: dart.legacy(core.List$(dart.legacy(delivery_address_model.DeliveryAddressModel)))
+  }));
+  dart.setLibraryUri(check_out_provider.CheckoutProvider, I[0]);
+  dart.setFieldSignature(check_out_provider.CheckoutProvider, () => ({
+    __proto__: dart.getFields(check_out_provider.CheckoutProvider.__proto__),
+    isloadding: dart.fieldType(dart.legacy(core.bool)),
+    firstName: dart.fieldType(dart.legacy(editable_text.TextEditingController)),
+    lastName: dart.fieldType(dart.legacy(editable_text.TextEditingController)),
+    mobileNo: dart.fieldType(dart.legacy(editable_text.TextEditingController)),
+    alternateMobileNo: dart.fieldType(dart.legacy(editable_text.TextEditingController)),
+    scoiety: dart.fieldType(dart.legacy(editable_text.TextEditingController)),
+    street: dart.fieldType(dart.legacy(editable_text.TextEditingController)),
+    landmark: dart.fieldType(dart.legacy(editable_text.TextEditingController)),
+    city: dart.fieldType(dart.legacy(editable_text.TextEditingController)),
+    aera: dart.fieldType(dart.legacy(editable_text.TextEditingController)),
+    pincode: dart.fieldType(dart.legacy(editable_text.TextEditingController)),
+    setLoaction: dart.fieldType(dart.legacy(location_platform_interface.LocationData)),
+    deliveryAdressList: dart.fieldType(dart.legacy(core.List$(dart.legacy(delivery_address_model.DeliveryAddressModel))))
+  }));
+  dart.trackLibraries("packages/food_app/providers/check_out_provider.dart", {
+    "package:food_app/providers/check_out_provider.dart": check_out_provider
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["check_out_provider.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IASO;;;;;;IAEiB;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACA;;;;;;IACT;;;;;;IAwDc;;;;;;cAtDZ,SAAS;AAAV;AACZ,YAAI,AAAU,AAAK;AACgC,UAApC,0CAAe;cACvB,KAAI,AAAS,AAAK;AACyB,UAAnC,0CAAe;cACvB,KAAI,AAAS,AAAK;AACyB,UAAnC,0CAAe;cACvB,KAAI,AAAkB,AAAK;AACyB,UAA5C,0CAAe;cACvB,KAAI,AAAQ,AAAK;AACyB,UAAlC,0CAAe;cACvB,KAAI,AAAO,AAAK;AACyB,UAAjC,0CAAe;cACvB,KAAI,AAAS,AAAK;AACyB,UAAnC,0CAAe;cACvB,KAAI,AAAK,AAAK;AACyB,UAA/B,0CAAe;cACvB,KAAI,AAAK,AAAK;AACyB,UAA/B,0CAAe;cACvB,KAAI,AAAQ,AAAK;AACyB,UAAlC,0CAAe;cACvB,KAAI,AAAY;AAC8B,UAAtC,0CAAe;;AAEX,UAAjB,kBAAa;AACI,UAAjB;AAwBE,UAvBF,MAAwB,AACnB,AACA,AACA,AAcF,sDAhBa,yBACM,AAAS,AAAY,yDAClC,6CACP,aAAa,AAAU,qBACvB,YAAY,AAAS,oBACrB,YAAY,AAAS,oBACrB,qBAAqB,AAAkB,6BACvC,WAAW,AAAQ,mBACnB,UAAU,AAAO,kBACjB,YAAY,AAAS,oBACrB,QAAQ,AAAK,gBACb,QAAQ,AAAK,gBACb,WAAW,AAAQ,mBACnB,eAAsB,cAAP,MAAM,GACrB,aAAa,AAAY,4BACzB,YAAY,AAAY,6CAClB,QAAC;AACW,YAAlB,kBAAa;AACI,YAAjB;AAC6D,YAA7D,MAAmB,0CAAe;AACP,YAAjB,AAAY,iDAAT,OAAO;AACH,YAAjB;UACD;AACgB,UAAjB;;MAEJ;;;AAGsB;AACO,sBAAU;AAEhB;AACJ,mBAAM,MAAwB,AAC1C,AACA,AACA,sDAFW,yBACM,AAAS,AAAY;AAE3C,sBAAI,AAAI,GAAD;AAaJ,UAZD,uBAAuB,+EACV,AAAI,GAAD,KAAK,wCACT,AAAI,GAAD,KAAK,0CACL,AAAI,GAAD,KAAK,sCACf,AAAI,GAAD,KAAK,4CACK,AAAI,GAAD,KAAK,4CACrB,AAAI,GAAD,KAAK,mCACJ,AAAI,GAAD,KAAK,uCACR,AAAI,GAAD,KAAK,sCACT,AAAI,GAAD,KAAK,qCACR,AAAI,GAAD,KAAK,oCACT,AAAI,GAAD,KAAK;AAEe,UAAjC,AAAQ,OAAD,OAAK,oBAAoB;AACf,UAAjB;;AAG0B,QAA5B,0BAAqB,OAAO;AACX,QAAjB;MACF;;;AAGE,YAAO;IACT;;UAKwB;UAClB;UACA;UACA;AAJU;AAqCb,QA/BiB,AACb,AACA,AACA,AACA,AACA,sDAJW,aACM,AAAS,AAAY,gEAC3B,sBAGd,6CACE,YAAY,QACZ,mBAAmB,IACnB,YAAY,MACZ,cAAc,AACT,AAQA,YATqB,kCACjB,QAAC,KAAM,6CACN,aAAsB,yBACtB,cAAc,AAAE,CAAD,YACf,aAAa,AAAE,CAAD,WACd,aAAa,AAAE,CAAD,WACd,cAAc,AAAE,CAAD,YACf,iBAAiB,AAAE,CAAD;MAelC;;;;IA/IK,mBAAa;IAEI,kBAAY;IACZ,iBAAW;IACX,iBAAW;IACX,0BAAoB;IACpB,gBAAU;IACV,eAAS;IACT,iBAAW;IACX,aAAO;IACP,aAAO;IACP,gBAAU;IACnB;IAwDc,2BAAqB;;;EA4ElD","file":"../../../../../../packages/food_app/providers/check_out_provider.dart.lib.js"}');
+  // Exports:
+  return {
+    providers__check_out_provider: check_out_provider
+  };
+}));
+
+//# sourceMappingURL=check_out_provider.dart.lib.js.map
